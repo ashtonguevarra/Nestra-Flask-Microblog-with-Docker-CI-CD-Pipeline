@@ -4,9 +4,12 @@ from app.forms import LoginForm
 from sqlalchemy as sa 
 from app import db
 from app.models import User 
+from flask_login import login_required
+from flask import requestfrom urllib.parse import urlsplit
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
     user = {'username': 'Ashton'}
     posts = [
@@ -36,12 +39,12 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = db.session.scalar(
-            sa.select(User).where(User.username == form.username.data)
-        if user is None or not user.check_password (form.password.data)
+            sa.select(User).where(User.username == form.username.data))
+        if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
-        flash('Login requested for user {}, remember_me={}'.format(form.username.date, form.remember_me.data))
-        return redirect(url_for('index'))
-    return render_template('login.html', title='Sign In', form=form)
-
-
+        login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or urlsplit(next_page).netloc != '':
+            next_page = url_for('index')
+        return redirect(next_page)
