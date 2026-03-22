@@ -1,4 +1,11 @@
-2026-03-22 19:23:06,563 ERROR: Exception on /login [POST] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-03-16 22:45:20,189 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-17 17:33:46,390 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-18 16:56:03,858 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-18 16:58:32,628 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-18 17:06:52,568 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-22 19:21:17,245 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-22 19:22:40,132 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-22 19:23:01,399 ERROR: Exception on /login [POST] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -140,8 +147,32 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 4227, in _configure_registries
     _do_configure_registries(registries, cascade)
     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 4264, in _do_configure_registries
-    raise e
-sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[User(user)]'. Original exception was: Column expression expected for argument 'primaryjoin'; got (<sqlalchemy.sql.elements.BinaryExpression object at 0x7fe8c70fdbe0>,).
-2026-03-22 19:25:52,924 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
-2026-03-22 19:27:52,844 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 4268, in _do_configure_registries
+    mapper._post_configure_properties()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/mapper.py", line 2427, in _post_configure_properties
+    prop.init()
+    ~~~~~~~~~^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/interfaces.py", line 595, in init
+    self.do_init()
+    ~~~~~~~~~~~~^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/relationships.py", line 1654, in do_init
+    self._process_dependent_arguments()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/relationships.py", line 1704, in _process_dependent_arguments
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnArgumentRole, val, argname=attr
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/sql/coercions.py", line 605, in _literal_coercion
+    self._raise_for_expected(element, argname)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/sql/coercions.py", line 519, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: Column expression expected for argument 'primaryjoin'; got (<sqlalchemy.sql.elements.BinaryExpression object at 0x7fe8c70fdbe0>,).
