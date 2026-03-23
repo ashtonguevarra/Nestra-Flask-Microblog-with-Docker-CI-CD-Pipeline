@@ -78,3 +78,6 @@ Traceback (most recent call last):
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'username' is undefined
 2026-03-23 11:13:13,237 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-23 11:15:38,671 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-23 11:16:02,203 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-23 11:22:31,342 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
