@@ -15,6 +15,8 @@
         <p>{{ form.submit() }}</p>
     </form>
     {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
     <p>
         {{ post.author.username }} says: <b>{{ post.body }}</b>
     </p>
