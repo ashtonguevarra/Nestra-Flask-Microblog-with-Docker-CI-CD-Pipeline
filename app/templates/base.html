@@ -2,19 +2,19 @@
 <html>
     <head>
         {% if title %}
-        <title>{{ title }} - Nestra</title>
+        <title>{{ title }} - Microblog</title>
         {% else %}
-        <title>Welcome to Nestra</title>
+        <title>Welcome to Microblog</title>
         {% endif %}
     </head>
     <body>
         <div>
-            Nestra:
+            Microblog:
             <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
             {% else %}
-            <a href="{{ url_for('explore') }}">Explore</a>
             <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
             <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
@@ -30,5 +30,5 @@
         {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
-    </body>
+  </body>
 </html>

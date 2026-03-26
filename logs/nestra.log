@@ -81,3 +81,43 @@ jinja2.exceptions.UndefinedError: 'username' is undefined
 2026-03-23 11:15:38,671 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
 2026-03-23 11:16:02,203 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
 2026-03-23 11:22:31,342 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-23 11:34:19,484 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-26 22:03:47,365 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-26 22:19:43,865 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-26 22:19:48,174 ERROR: Exception on /index [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/app/routes.py", line 32, in index
+    posts = db.paginate(current_user.following_posts, page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+                                                                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'POSTS_PER_PAGE'
+2026-03-26 22:19:49,635 ERROR: Exception on /explore [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/app/routes.py", line 45, in explore
+    posts = db.paginate(query, page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
+                                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'POSTS_PER_PAGE'
+2026-03-26 22:24:03,865 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
