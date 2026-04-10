@@ -131,3 +131,4 @@ KeyError: 'POSTS_PER_PAGE'
 2026-04-10 19:27:38,671 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
 2026-04-10 19:28:32,429 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
 2026-04-10 19:30:00,002 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:32:51,184 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
