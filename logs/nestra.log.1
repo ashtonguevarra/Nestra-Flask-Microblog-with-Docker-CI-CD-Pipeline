@@ -1,4 +1,4 @@
-2026-04-10 19:37:36,395 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:38:36,377 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,7 +29,7 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/templating.py", line 100, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap_wtf.html
-2026-04-10 19:37:37,994 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:38:37,727 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,7 +60,7 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/templating.py", line 100, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap_wtf.html
-2026-04-10 19:37:41,751 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:38:38,676 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -91,7 +91,8 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/templating.py", line 100, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap_wtf.html
-2026-04-10 19:37:42,823 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:40:27,076 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:40:28,013 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -116,10 +117,21 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/app/templates/login.html", line 2, in top-level template code
     {% import "bootstrap_wtf.html" as wtf %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/templating.py", line 66, in get_source
-    return self._get_source_fast(environment, template)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/templating.py", line 100, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap_wtf.html
-2026-04-10 19:38:34,620 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+  File "/home/ashton/nestra/app/templates/base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/app/templates/login.html", line 10, in block 'content'
+    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+    ^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/werkzeug/routing/map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
