@@ -1,4 +1,4 @@
-2026-04-10 19:40:29,289 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:43:57,303 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -41,7 +41,8 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/werkzeug/routing/map.py", line 901, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2026-04-10 19:40:30,192 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:45:11,995 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:45:13,350 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -84,8 +85,7 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/werkzeug/routing/map.py", line 901, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2026-04-10 19:40:52,415 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-10 19:40:53,400 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-04-10 19:45:14,691 ERROR: Exception on /login [GET] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -128,3 +128,18 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/werkzeug/routing/map.py", line 901, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
+2026-04-10 19:48:11,905 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:48:11,950 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:48:11,950 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:48:18,051 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:48:18,076 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:48:18,076 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:17,196 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:17,223 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:17,223 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:19,782 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:19,808 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:49:19,808 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:50:52,355 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:50:56,794 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:52:18,044 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
