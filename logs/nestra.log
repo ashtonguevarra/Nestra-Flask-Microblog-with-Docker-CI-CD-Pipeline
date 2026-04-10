@@ -122,3 +122,8 @@ Traceback (most recent call last):
 KeyError: 'POSTS_PER_PAGE'
 2026-03-26 22:24:03,865 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
 2026-03-26 22:56:47,331 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-04-10 18:33:51,028 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 18:44:21,496 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 18:45:18,888 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 18:46:03,971 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 18:49:25,215 INFO: nestra startup [in /home/ashton/nestra/app/__init__.py:45]
