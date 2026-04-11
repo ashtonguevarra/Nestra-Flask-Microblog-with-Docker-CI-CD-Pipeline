@@ -1,3 +1,3 @@
-# Nestra
+# Nestra – Flask Microblog with CI/CD Pipeline
 
-A Flask-based microblog web application that I am currently developing as part of my backend and CI/CD practice.
+A Flask-based microblogging platform containerized using Docker and integrated with a CI/CD pipeline via GitHub Actions. This project demonstrates backend development, automated testing, and DevOps practices.
