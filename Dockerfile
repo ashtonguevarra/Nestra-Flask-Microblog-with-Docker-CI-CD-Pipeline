@@ -1,16 +1,18 @@
-FROM python:slim
+FROM python:3.11-slim
+
+WORKDIR /app
 
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-RUN pip install gunicorn
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY app app
 COPY migrations migrations
-COPY microblog.py config.py boot.sh ./
-RUN chmod a+x boot.sh
+COPY nestra.py config.py boot.sh ./
 
-ENV FLASK_APP nestra.py
-RUN flask translate compile
+RUN chmod +x boot.sh
+
+ENV FLASK_APP=nestra.py
 
 EXPOSE 5000
-ENTRYPOINT [ "./boot.sh" ]
+
+ENTRYPOINT ["./boot.sh"]
