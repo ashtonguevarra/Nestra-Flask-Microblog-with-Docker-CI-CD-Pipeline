@@ -3,3 +3,6 @@ venv/
 __pycache__/
 *.pyc
 .git/
+activate.sh
+flrun.sh
+resetdb.sh
