@@ -1,4 +1,11 @@
-2026-04-27 19:10:03,732 ERROR: Exception on /login [POST] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
+2026-03-16 22:42:14,918 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-03-16 22:43:16,860 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:43]
+2026-04-10 19:53:19,865 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-10 19:59:37,710 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-11 17:13:13,487 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-13 23:59:02,014 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-27 11:50:45,226 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
+2026-04-27 12:12:09,952 ERROR: Exception on /register [POST] [in /home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
     self.dialect.do_execute(
@@ -24,9 +31,26 @@ Traceback (most recent call last):
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/home/ashton/nestra/app/routes.py", line 64, in login
-    user = db.session.scalar(
-        sa.select(User).where(User.username == form.username.data))
+  File "/home/ashton/nestra/app/routes.py", line 88, in register
+    if form.validate_on_submit():
+       ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/flask_wtf/form.py", line 86, in validate_on_submit
+    return self.is_submitted() and self.validate(extra_validators=extra_validators)
+                                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/wtforms/form.py", line 330, in validate
+    return super().validate(extra)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/wtforms/form.py", line 147, in validate
+    if not field.validate(self, extra):
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/wtforms/fields/core.py", line 234, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/ashton/nestra/venv/lib/python3.14/site-packages/wtforms/fields/core.py", line 254, in _run_validation_chain
+    validator(form, self)
+    ~~~~~~~~~^^^^^^^^^^^^
+  File "/home/ashton/nestra/app/forms.py", line 27, in validate_username
+    user = db.session.scalar(sa.select(User).where(
+        User.username == username.data))
   File "/home/ashton/nestra/venv/lib/python3.14/site-packages/sqlalchemy/orm/scoping.py", line 1826, in scalar
     return self._proxied.scalar(
            ~~~~~~~~~~~~~~~~~~~~^
@@ -110,14 +134,5 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
 [SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
 FROM user 
 WHERE user.username = ?]
-[parameters: ('dean',)]
+[parameters: ('chONGKIDS',)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
-2026-04-27 19:12:20,948 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:03,863 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:09,304 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:10,382 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:37,835 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:45,124 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:14:46,147 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:15:05,830 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
-2026-04-27 19:15:10,344 INFO: Microblog startup [in /home/ashton/nestra/app/__init__.py:45]
